@@ -63,6 +63,56 @@ public class Elecciones{
 			+ inmueble.getPiso() + " "
 			+ inmueble.getPuerta()+ " ");
 	
-		
+			
+			//datos espacio publico
+                        EspacioPublico espacio = new EspacioPublico();
+                        String direccion, tipo;
+                        
+                        System.out.println("Escribe direccion del espacio publico");
+                        direccion = sc.next();
+                        espacio.setDireccion(direccion);
+                        
+                        String A = "Ayuntamiento";
+                        String B = "Centro Cultural";
+                        String C = "Centro Polideportivo";
+                        System.out.println("Elige tipo del espacio publico: \nA - Ayuntamiento \nB - Centro cultural \nC - Centro Polideportivo");
+                        tipo = sc.next();
+                        
+                        if(tipo.equalsIgnoreCase("A") || tipo.equalsIgnoreCase("B") || tipo.equalsIgnoreCase("C")){
+                            
+                            System.out.println("Tipo Espacio: " + tipo);
+                        }else {
+                            System.out.println("Tipo novalido");
+                        }
+                 
+                        
+                        //datos ayuntamiento
+                        Ayuntamiento ayuntamiento = new Ayuntamiento();
+                        String localidad, provincia, nomAlcalde, partidoAlcalde;
+                        
+                        System.out.println("Ingresa Nombre localidad");
+                        localidad = sc.next();
+                        ayuntamiento.setLocalidad(localidad);
+                        
+                        System.out.println("Ingresa Nombre provincia");
+                        provincia = sc.next();
+                        ayuntamiento.setProvincia(provincia);
+                        
+                        System.out.println("Ingresa Nombre del Alcalde");
+                        nomAlcalde = sc.next();
+                        ayuntamiento.setNomAlcalde(nomAlcalde);
+                        
+                                               
+                        System.out.println("Ingresa Nombre del partido politico del Alcalde");
+                        partidoAlcalde = sc.next();
+                        ayuntamiento.setPartidoAlcalde(partidoAlcalde);
+                        
+                        
+                        
+                        System.out.println("Localidad: " + ayuntamiento.getLocalidad());
+                        System.out.println("Provincia: " + ayuntamiento.getProvincia()); 
+                        System.out.println("Nombre del Alcalde: " + ayuntamiento.getNomAlcalde());
+                        System.out.println("Partido politico del Alcalde: " + ayuntamiento.getPartidoAlcalde());
+                        
 	}
 }
