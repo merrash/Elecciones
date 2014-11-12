@@ -1,3 +1,2 @@
 Elecciones
 ==========
-http://i7exe.blogspot.com.es/2013/07/clase-arraylist-y-archivos-de-texto.html
