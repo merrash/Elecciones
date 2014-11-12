@@ -1,3 +1,8 @@
+package elecciones;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Elecciones{
@@ -29,7 +34,8 @@ public class Elecciones{
 		System.out.println("Ingresa Edad del habitante");
 		edad = sc.nextInt();
                 habitante.setEdad(edad);
-
+                
+                System.out.println("\n\nDatos Habitante:");    
                 System.out.println("DNI:" + dni);
                 System.out.println("Nombre: " + nombre); 
                 System.out.println("Apellidos: " + apellidos);
@@ -42,7 +48,7 @@ public class Elecciones{
 		int numero, piso;
 				
 				
-				System.out.println("Ingresa nombre calle");
+				System.out.println("\n\nIngresa nombre calle");
 				calle = sc.next();
 				inmueble.setCalle(calle);
 
@@ -57,18 +63,19 @@ public class Elecciones{
 				System.out.println("Ingresa puerta mano");
 				puerta = sc.next();
 				inmueble.setPuerta(puerta);
-
+                                
+                                System.out.println("\n\nDatos Inmueble:"); 
 				System.out.println(inmueble.getCalle() + " "
 			+ inmueble.getNumero() + ","
 			+ inmueble.getPiso() + " "
 			+ inmueble.getPuerta()+ " ");
 	
-			
-			//datos espacio publico
+                                
+                        //datos espacio publico
                         EspacioPublico espacio = new EspacioPublico();
                         String direccion, tipo;
                         
-                        System.out.println("Escribe direccion del espacio publico");
+                        System.out.println("\n\nEscribe direccion del espacio publico");
                         direccion = sc.next();
                         espacio.setDireccion(direccion);
                         
@@ -90,7 +97,7 @@ public class Elecciones{
                         Ayuntamiento ayuntamiento = new Ayuntamiento();
                         String localidad, provincia, nomAlcalde, partidoAlcalde;
                         
-                        System.out.println("Ingresa Nombre localidad");
+                        System.out.println("\n\nIngresa Nombre localidad");
                         localidad = sc.next();
                         ayuntamiento.setLocalidad(localidad);
                         
@@ -108,7 +115,7 @@ public class Elecciones{
                         ayuntamiento.setPartidoAlcalde(partidoAlcalde);
                         
                         
-                        
+                        System.out.println("\n\nDatos Ayuntamiento:"); 
                         System.out.println("Localidad: " + ayuntamiento.getLocalidad());
                         System.out.println("Provincia: " + ayuntamiento.getProvincia()); 
                         System.out.println("Nombre del Alcalde: " + ayuntamiento.getNomAlcalde());
@@ -116,30 +123,44 @@ public class Elecciones{
                         
                         //datos partidos
                         Partido partido = new Partido();
-                        String private String nombrePartido, alineacion, sede, presidente;
-
-                        System.out.println("_Ingresa nombre del Partido");
+                        String nombrePartido, alineacion, sede, presidente;
+                        
+                        System.out.println("\n\nIngresa nombre del partido");
                         nombrePartido = sc.next();
-                        Partido.setNombrePartido(nombrePartido);
+                        partido.setNombrePartido(nombrePartido);
 
-                        System.out.println("_Ingresa alineacion del Partido");
+                        System.out.println("Ingresa alineacion del partido");
                         alineacion = sc.next();
-                        Partido.setAlineacion(alineacion);
+                        partido.setAlineacion(alineacion);
 
-                        System.out.println("_Ingresa ciudad de la sede");
+
+                        System.out.println("Ingresa sede del partido");
                         sede = sc.next();
-                        Partido.setSede(sede);
+                        partido.setSede(sede);
 
-                        System.out.println("_Ingresa nombre del Presidente");
+                        System.out.println("Ingresa presidente del partido");
                         presidente = sc.next();
-                        presidente.setPresidente(presidente);
-
-                        System.out.println("nombre del Partido: " + partido.getnombrePartido());
+                        partido.setPresidente(presidente);
+                        
+                        System.out.println("\n\nDatos Partido:"); 	
+                        System.out.println("Nombre del partido: " + partido.getNombrePartido());
                         System.out.println("Alineacion: " + partido.getAlineacion()); 
                         System.out.println("Sede: " + partido.getSede());
-                        System.out.println("Presidente: " + partido.getPresidente());
+                        System.out.println("Presidente: " + partido.getPresidente());   
                         
-    
+                        System.out.println("\n\nLectura archivo listadoPartidos\n"); 
+                        File f = new File( "C:\\Users\\TIBURON\\Documents\\NetBeansProjects\\Elecciones\\src\\elecciones\\listadoPartidos.txt" );
+                        BufferedReader entrada;
+                        try {
+                            entrada = new BufferedReader( new FileReader( f ) );
+                            String linea;
+                            
+                            while(entrada.ready()){
+                                linea = entrada.readLine();
+                                System.out.println(linea);
+                                }
+                            }catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         
-	}
-}
+		}
