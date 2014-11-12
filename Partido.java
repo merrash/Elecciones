@@ -4,10 +4,10 @@ public class Partido {
     private String sede;
     private String presidente; 
     
-    public void setNomrePartido(String nompar){
+    public void setNombrePartido(String nompar){
         nombrePartido = nompar;
     }
-    public String getNomrePartido(){
+    public String getNombrePartido(){
         return nombrePartido;
     }
     
