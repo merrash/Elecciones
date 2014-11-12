@@ -114,5 +114,32 @@ public class Elecciones{
                         System.out.println("Nombre del Alcalde: " + ayuntamiento.getNomAlcalde());
                         System.out.println("Partido politico del Alcalde: " + ayuntamiento.getPartidoAlcalde());
                         
+                        //datos partidos
+                        Partido partido = new Partido();
+                        String private String nombrePartido, alineacion, sede, presidente;
+
+                        System.out.println("_Ingresa nombre del Partido");
+                        nombrePartido = sc.next();
+                        Partido.setNombrePartido(nombrePartido);
+
+                        System.out.println("_Ingresa alineacion del Partido");
+                        alineacion = sc.next();
+                        Partido.setAlineacion(alineacion);
+
+                        System.out.println("_Ingresa ciudad de la sede");
+                        sede = sc.next();
+                        Partido.setSede(sede);
+
+                        System.out.println("_Ingresa nombre del Presidente");
+                        presidente = sc.next();
+                        presidente.setPresidente(presidente);
+
+                        System.out.println("nombre del Partido: " + partido.getnombrePartido());
+                        System.out.println("Alineacion: " + partido.getAlineacion()); 
+                        System.out.println("Sede: " + partido.getSede());
+                        System.out.println("Presidente: " + partido.getPresidente());
+                        
+    
+                        
 	}
 }
