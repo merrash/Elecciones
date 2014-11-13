@@ -5,34 +5,34 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Elecciones{
+public class Elecciones {
 
-	public static void main(String[] args) {
-		
+    public static void main(String[] args) {
+        
                 //datos habitante
-		Habitante habitante = new Habitante();
-		
-		String dni, nombre, apellidos;
-		int edad;	
-		
+        Habitante habitante = new Habitante();
+        
+        String dni, nombre, apellidos;
+        int edad;   
+        
                 Scanner sc = new Scanner(System.in);
                 System.out.println("Ingresa DNI del habitante");
-		dni = sc.next();
+        dni = sc.next();
                 habitante.setDni(dni);
                 
 
                 
-		System.out.println("Ingresa Nombre del habitante");
-		nombre = sc.next();
+        System.out.println("Ingresa Nombre del habitante");
+        nombre = sc.next();
                 habitante.setNombre(nombre);
 
                 
-		System.out.println("Ingresa Apellidos del habitante");
-		apellidos = sc.next();
+        System.out.println("Ingresa Apellidos del habitante");
+        apellidos = sc.next();
                 habitante.setApellidos(apellidos);
 
-		System.out.println("Ingresa Edad del habitante");
-		edad = sc.nextInt();
+        System.out.println("Ingresa Edad del habitante");
+        edad = sc.nextInt();
                 habitante.setEdad(edad);
                 
                 System.out.println("\n\nDatos Habitante:");    
@@ -44,32 +44,32 @@ public class Elecciones{
                 //datos Inmueble
                 
                 Inmueble inmueble = new Inmueble();
-		String calle, puerta;
-		int numero, piso;
-				
-				
-				System.out.println("\n\nIngresa nombre calle");
-				calle = sc.next();
-				inmueble.setCalle(calle);
+        String calle, puerta;
+        int numero, piso;
+                
+                
+                System.out.println("\n\nIngresa nombre calle");
+                calle = sc.next();
+                inmueble.setCalle(calle);
 
-				System.out.println("Ingresa numero portal");
-				numero = sc.nextInt();
-				inmueble.setNumero(numero);
+                System.out.println("Ingresa numero portal");
+                numero = sc.nextInt();
+                inmueble.setNumero(numero);
 
-				System.out.println("Ingresa numero piso");
-				piso = sc.nextInt();
-				inmueble.setPiso(piso);
+                System.out.println("Ingresa numero piso");
+                piso = sc.nextInt();
+                inmueble.setPiso(piso);
 
-				System.out.println("Ingresa puerta mano");
-				puerta = sc.next();
-				inmueble.setPuerta(puerta);
+                System.out.println("Ingresa puerta mano");
+                puerta = sc.next();
+                inmueble.setPuerta(puerta);
                                 
                                 System.out.println("\n\nDatos Inmueble:"); 
-				System.out.println(inmueble.getCalle() + " "
-			+ inmueble.getNumero() + ","
-			+ inmueble.getPiso() + " "
-			+ inmueble.getPuerta()+ " ");
-	
+                System.out.println(inmueble.getCalle() + " "
+            + inmueble.getNumero() + ","
+            + inmueble.getPiso() + " "
+            + inmueble.getPuerta()+ " ");
+    
                                 
                         //datos espacio publico
                         EspacioPublico espacio = new EspacioPublico();
@@ -142,14 +142,14 @@ public class Elecciones{
                         presidente = sc.next();
                         partido.setPresidente(presidente);
                         
-                        System.out.println("\n\nDatos Partido:"); 	
+                        System.out.println("\n\nDatos Partido:");   
                         System.out.println("Nombre del partido: " + partido.getNombrePartido());
                         System.out.println("Alineacion: " + partido.getAlineacion()); 
                         System.out.println("Sede: " + partido.getSede());
                         System.out.println("Presidente: " + partido.getPresidente());   
                         
                         System.out.println("\n\nLectura archivo listadoPartidos\n"); 
-                        File f = new File( "C:\\Users\\TIBURON\\Documents\\NetBeansProjects\\Elecciones\\src\\elecciones\\listadoPartidos.txt" );
+                        File f = new File( "/home/zubiri/javaProject/Elecciones/listadoPartidos.txt" );
                         BufferedReader entrada;
                         try {
                             entrada = new BufferedReader( new FileReader( f ) );
@@ -158,9 +158,31 @@ public class Elecciones{
                             while(entrada.ready()){
                                 linea = entrada.readLine();
                                 System.out.println(linea);
-                                }
-                            }catch (IOException e) {
+                            }
+                            }
+                            catch (IOException e) {
                                 e.printStackTrace();
                             }
+
+
+                        ArrayList<Partido> myarraylist = new ArrayList<Partido>();
+                        String contenido;
+                        StringTokenizer st = new StringTokenizer(fr+",");
+                        while ((contenido = fr.readLine()) != null) {
                         
-		}
+                        myarraylist.add(contenido);
+                        }
+                        
+                        System.out.println("\nPartidos que participan en las elecciones\n");
+                        while (st.hasMoreTokens()) {
+                        System.out.println(st.nextToken());
+                        }
+                        //System.out.println("\nPartidos que participan en las elecciones\n"+resutadoPar[0]+"\n"+resutadoPar[1]+"\n");
+                        myarraylist.clear();
+                        if (myarraylist.size() == 0){
+                        System.out.println("\n ArrayList vaciado correctamente");
+                        }
+                                                
+    }
+}
+    
