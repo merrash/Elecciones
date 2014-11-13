@@ -1,9 +1,8 @@
-package elecciones;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Elecciones {
 
@@ -151,9 +150,14 @@ public class Elecciones {
                         System.out.println("\n\nLectura archivo listadoPartidos\n"); 
                         File f = new File( "/home/zubiri/javaProject/Elecciones/listadoPartidos.txt" );
                         BufferedReader entrada;
+                        String linea;
+                        String ruta =("/home/zubiri/javaProject/Elecciones/listadoPartidos.txt");
                         try {
+                            
+                            File f = new File(ruta);
+                            BufferedReader entrada;    
                             entrada = new BufferedReader( new FileReader( f ) );
-                            String linea;
+                            
                             
                             while(entrada.ready()){
                                 linea = entrada.readLine();
