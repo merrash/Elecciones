@@ -1,5 +1,5 @@
-partido1
-partido2
-partido3
-partido4
-partido5
+partido1: psoe, derecha, madrid, omar
+partido2: pp, izquierda, barcelona, sergy
+partido3: pnv, centroizquierda, bilbao, miguel
+partido4: podemos, centroderecha, donostia, ronaldinho
+partido5: verdes, centro, coruña, cristiano
