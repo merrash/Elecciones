@@ -1,4 +1,4 @@
-package elecciones;
+
 public class Partido {
     private String nombrePartido;
     private String alineacion;

@@ -1,4 +1,4 @@
-package elecciones;
+
 public class EspacioPublico {
     private String direccion;
     private String tipoEspacio;

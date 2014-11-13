@@ -1,4 +1,4 @@
-package elecciones;
+
 public class Inmueble {
         
         private String calle;

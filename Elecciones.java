@@ -1,5 +1,3 @@
-package elecciones;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -157,7 +155,7 @@ public class Elecciones {
             
             //arraylist partidos
            String nombrefichero = "listadoPartidos.txt";
-		String ruta ="C:\\Users\\TIBURON\\Documents\\NetBeansProjects\\Elecciones";
+		String ruta1 ="/home/zubiri/javaProject/Elecciones";
 	
 
 		String salida;
@@ -165,7 +163,7 @@ public class Elecciones {
 
 		try 
 		{		
-		File archivo = new File(ruta, nombrefichero);
+		File archivo = new File(ruta1, nombrefichero);
 		FileReader leer = new FileReader (archivo);
 		BufferedReader bf = new BufferedReader(leer);
 		salida = bf.readLine();
@@ -182,21 +180,19 @@ public class Elecciones {
         	}	
                 
                 //arraylist habitantes
-                String nombrefichero = "censo.txt";
-		String ruta ="C:\\Users\\TIBURON\\Documents\\NetBeansProjects\\Elecciones";
+                String nombrefichero2 = "censo.txt";
+		String ruta2 ="/home/zubiri/javaProject/Elecciones";
 	
 
-		String salida;
-		int i = 0;
-
+	
 		try 
 		{		
-		File archivo = new File(ruta, nombrefichero);
+		File archivo = new File(ruta2, nombrefichero2);
 		FileReader leer = new FileReader (archivo);
 		BufferedReader bf = new BufferedReader(leer);
 		salida = bf.readLine();
 			List<String> aList= new ArrayList<String>(Arrays.asList(salida.split(" ")));
-				System.out.println("Estos son los partidos que hay disponibles");
+				System.out.println("Estos son habitantes que participaran en las elecciones");
 				for(int r=0;r<aList.size();r++)
 				{
    					 System.out.println(" -->"+aList.get(r));
