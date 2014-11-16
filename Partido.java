@@ -1,9 +1,14 @@
+package elecciones;
 public class Partido {
     private String nombrePartido;
     private String alineacion;
     private String sede;
     private String presidente; 
     
+    /**
+     *
+     * @param nompar
+     */
     public void setNombrePartido(String nompar){
         nombrePartido = nompar;
     }

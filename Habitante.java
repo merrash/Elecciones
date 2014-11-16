@@ -1,3 +1,6 @@
+package elecciones;
+
+
 public class Habitante{
 	
 	private String dni;

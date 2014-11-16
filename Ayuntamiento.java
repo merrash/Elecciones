@@ -1,3 +1,4 @@
+package elecciones;
 public class Ayuntamiento {
     private String localidad;
     private String provincia;

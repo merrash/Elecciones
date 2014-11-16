@@ -1,0 +1,4 @@
+habitante1: 1457896F, bruno alves, 19
+habitante2: 6516516G, dimas coisi, 42
+habitante3: 2135465T, fulko roma, 37
+habitante4: 5451651R, gigi riva, 15 
