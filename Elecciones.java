@@ -6,14 +6,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class Elecciones {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
-        try {
+        
             
             //datos habitante
             Habitante habitante = new Habitante();
@@ -156,29 +155,32 @@ public class Elecciones {
             
             System.out.println("\n\nLectura archivo listadoPartidos\n");
             
-            File f = new File( "C:\\Users\\TIBURON\\Documents\\NetBeansProjects\\Elecciones\\src\\elecciones\\listadoPartidos.txt" );
-            BufferedReader entrada;
-            try {
-                entrada = new BufferedReader( new FileReader( f ) );
-                String linea;
+           String nombrefichero = "listadoPartidos.txt";
+		String ruta ="C:\\Users\\TIBURON\\Documents\\NetBeansProjects\\Elecciones";
+	
+
+		String salida;
+		int i = 0;
+
+		try 
+		{		
+		File archivo = new File(ruta, nombrefichero);
+		FileReader leer = new FileReader (archivo);
+		BufferedReader bf = new BufferedReader(leer);
+		salida = bf.readLine();
+			List<String> aList= new ArrayList<String>(Arrays.asList(salida.split(" ")));
+				System.out.println("Estos son los partidos que hay disponibles");
+				for(int r=0;r<aList.size();r++)
+				{
+   					 System.out.println(" -->"+aList.get(r));
+				}
+		}
+		 catch (FileNotFoundException e) 
+		{
+           		 System.out.println(e.getMessage());
+        	}	
                 
-                while(entrada.ready()){
-                    linea = entrada.readLine();
-                    System.out.println(linea);
-                }
-            }catch (IOException e) {
-                e.printStackTrace();
-            }
-            
-            
-            Scanner s = new Scanner(new File("C:\\Users\\TIBURON\\Documents\\NetBeansProjects\\Elecciones\\src\\elecciones\\listadoPartidos.txt"));
-            ArrayList<String> list = new ArrayList<String>();
-            while (s.hasNext()) {
-                list.add(s.next());
-            }
-            s.close();                                        
-        }catch (FileNotFoundException ex) {
-            Logger.getLogger(Elecciones.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }
+                
+    }           
+
 }
